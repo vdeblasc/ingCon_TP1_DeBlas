@@ -1,16 +1,7 @@
 
 
 
-def saludar_persona(nombre):
+texto = "ABCDEFGHIJKLM"
 
-    """
-
-    Esta función sirve para saludar
-
-    a las personas
-
-    """
-
-    print(f"Hola {nombre}")
-
-saludar_persona("Juan")
+fragmento = texto[::-1]
+print(fragmento)
