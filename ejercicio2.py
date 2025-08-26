@@ -10,9 +10,9 @@ matriz = [
     ["G", "H", "I"]
 ]
 
-cont = 1
+
 
 # Imprimir fila por fila
-for fila in matriz:
-    print(cont,"|", "  ".join(fila))
-    cont +=1
+for i, fila in enumerate(matriz, start=1):
+    print(i, "|", "  ".join(fila))
+    
