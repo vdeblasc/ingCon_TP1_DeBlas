@@ -11,7 +11,6 @@ matriz = [
 ]
 
 
-
 # Imprimir fila por fila
 for i, fila in enumerate(matriz, start=1):
     print(i, "|", "  ".join(fila))
