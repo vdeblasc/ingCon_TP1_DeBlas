@@ -11,3 +11,22 @@ empleados = {
     3: ("María", 35, 4000)
 }
 """
+def filtros_empleados(empleados, salario_limite):
+    filtro = {}
+    for id_empleados, datos in empleados.items():
+        nombre, edad, salario = datos
+        if salario > salario_limite:
+            filtro[id_empleados] = datos
+    return filtro
+
+
+empleados = {
+    1: ("Ana", 30, 3000),
+    2: ("Luis", 25, 2500),
+    3: ("María", 35, 4000),
+    4: ("Daniela", 20, 5000),
+    5: ("Donatella", 30, 6500),
+    6: ("Gerardo", 28, 5500),
+}
+
+print(filtros_empleados(empleados, 4000))
