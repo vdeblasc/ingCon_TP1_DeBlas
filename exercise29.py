@@ -10,3 +10,15 @@ notas_estudiantes = [
     ("María", [75, 85, 70])
 ]
 """
+def promedio_estudiantes(notas_estudiantes):
+    promedio = {}
+    for nombre, notas in notas_estudiantes:
+        promedio[nombre] = round(sum(notas) / len(notas), 3)
+    return promedio
+
+notas_estudiantes = [
+    ("Ana", [85, 90, 78]),
+    ("Luis", [88, 92, 80]),
+    ("María", [75, 85, 70])
+]
+print(promedio_estudiantes(notas_estudiantes))

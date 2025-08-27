@@ -8,3 +8,14 @@ usuarios = ["Ana", "Luis", "María"]
 configurar_perfiles(usuarios, idioma="es", modo_oscuro=True, notificaciones=False)
 }
 """
+from pprint import pprint
+
+def configurar_perfiles(usuarios, **kwargs):
+    perfiles = {}
+    for usuario in usuarios:
+        perfiles[usuario] = list(kwargs.items())
+    return perfiles
+
+usuarios = ["Ana", "Luis", "María"]
+config = configurar_perfiles(usuarios, idioma="es", modo_oscuro=True, notificaciones=False)
+pprint(config)
