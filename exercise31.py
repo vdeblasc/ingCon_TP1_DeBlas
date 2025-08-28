@@ -9,3 +9,23 @@ de la publicación.
 publicar("Juan", "Mi primer post!", etiquetas=["#hola", "#primerPost"], 
 visibilidad="publica", likes=100)
 """
+from pprint import pprint
+
+def publicar (usuario, texto, etiquetas, **kwargs):
+    publicacion = {
+        "usuario": usuario,
+        "texto": texto,
+        "etiquetas": etiquetas
+    }
+
+    publicacion.update(kwargs)
+    return publicacion
+
+post = publicar("Juan",
+                "Mi primer post!",
+                etiquetas=["#hola", "#primerPost"],
+                visibilidad="publica",
+                likes=100
+                )
+
+pprint(post)

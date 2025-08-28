@@ -14,3 +14,27 @@ inventario = {
 }
 actualizar_inventario(tienda="Tienda A", producto_1=10, producto_2=-5)
 """
+from pprint import pprint
+
+inventario = {
+    "Tienda A": {"producto_1": 50, "producto_2": 30},
+    "Tienda B": {"producto_1": 20, "producto_2": 40}
+}
+
+def actualizar_inventario(tienda, **kwargs):
+    if tienda not in inventario:
+        inventario[tienda] = {}  # si la tienda no existe, la creamos
+    
+    for producto, cantidad in kwargs.items():
+        if producto in inventario[tienda]:
+            inventario[tienda][producto] += cantidad
+        else:
+            inventario[tienda][producto] = cantidad
+    return inventario
+
+
+actualizar_inventario(tienda = "Tienda A", producto_1 = 10, producto_2 = -5)
+actualizar_inventario(tienda = "Tienda B", producto_1 = -5, producto_2 = 25)
+
+print("Estado actualizado del inventario:")
+pprint(inventario)

@@ -3,10 +3,11 @@
 
 
 
-def suma_args(*args):
+from os import system
 
-    # funciona de la misma manera
-    total = 0
-    for arg in args:
-        total += arg
-    return total
+nombre = input("Dime tu nombre: ")
+edad = input("Dime tu edad: ")
+
+system("cls")
+
+print(f"Tu nombre es {nombre} y tienes {edad} años")

@@ -9,3 +9,21 @@ días especificados.
 precios_diarios = [100, 105, 102, 110, 108]
 operaciones = [("compra", 0), ("venta", 3), ("compra", 2), ("venta", 4)]
 """
+def simular_mercado(precios, operaciones):
+    beneficio = 0
+    precio_compra = None
+    
+    for operacion, dia in operaciones:
+        if operacion == "compra":
+            precio_compra = precios[dia]   # guardamos el precio de compra
+        elif operacion == "venta" and precio_compra is not None:
+            beneficio += precios[dia] - precio_compra
+            precio_compra = None           # después de vender ya no tenemos acciones
+    return beneficio
+
+
+precios_diarios = [100, 105, 102, 110, 108]
+operaciones = [("compra", 0), ("venta", 3), ("compra", 2), ("venta", 4)]
+
+resultado = simular_mercado(precios_diarios, operaciones)
+print("Beneficio total:", resultado)

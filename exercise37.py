@@ -5,5 +5,20 @@ array de hashtags y una lista de tuplas donde cada tupla contiene un
 hashtag y su frecuencia de uso. La función debe devolver los hashtags 
 que han sido mencionados más de una cierta cantidad de veces.
 
-hashtags = ["#verano", "#moda", "#viajes", "#verano", "#moda", "#tecnologia"] tendencias = [("#verano", 120), ("#moda", 80), ("#tecnologia", 150)]
+hashtags = ["#verano", "#moda", "#viajes", "#verano", "#moda", "#tecnologia"] 
+tendencias = [("#verano", 120), ("#moda", 80), ("#tecnologia", 150)]
 """
+def analizar_tendencias(hashtags, tendencias, minimo):
+    resultado = []
+    for hashtag, frecuencia in tendencias:
+        if frecuencia > minimo:
+            resultado.append(hashtag)
+    return resultado
+
+
+hashtags = ["#verano", "#moda", "#viajes", "#verano", "#moda", "#tecnologia"]
+tendencias = [("#verano", 120), ("#moda", 80), ("#tecnologia", 150)]
+
+
+populares = analizar_tendencias(hashtags, tendencias, minimo=100)
+print("Hashtags más usados:", populares)
